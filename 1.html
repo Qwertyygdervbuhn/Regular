@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 01</title>
+    <style>
+        .hint {
+            display: none;
+            color: gray;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="form">
+        <div>
+            <label>Логин</label>
+            <input type="text" id="login">
+            <span class="hint" id="loginHint">Ваш логин должен состоять не менее чем из 4 символов</span>
+        </div>
+        <div>
+            <label>Пароль</label>
+            <input type="password" id="password">
+            <span class="hint" id="passwordHint">Пароль должен содержать буквы, цифры и специальный символ</span>
+        </div>
+        <div>
+            <input type="submit" value="Зарегистрироваться">
+        </div>
+    </form>
+
+    <script>
+        const form = document.getElementById("form");
+        const login = document.getElementById("login");
+        const password = document.getElementById("password");
+        const loginHint = document.getElementById("loginHint");
+        const passwordHint = document.getElementById("passwordHint");
+
+        form.onsubmit = function (event) {
+            event.preventDefault(); 
+            const loginValue = login.value;
+            const passwordValue = password.value;
+
+            alert("Ваш логин: " + loginValue + "\nВаш пароль: " + passwordValue);
+        };
+
+
+    </script>
+</body>
+</html>
